@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { buttonClass } from "@/components/ui";
 
 export function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
@@ -13,9 +14,9 @@ export function CopyButton({ text }: { text: string }) {
         setCopied(true);
         setTimeout(() => setCopied(false), 1500);
       }}
-      className="rounded-lg border px-4 py-3 hover:opacity-80"
+      className={buttonClass("primary", "md")}
     >
-      {copied ? "Đã copy" : "Copy"}
+      {copied ? "Đã copy" : "Copy link"}
     </button>
   );
 }
