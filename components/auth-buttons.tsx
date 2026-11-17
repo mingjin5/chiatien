@@ -3,13 +3,13 @@
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 
-export function SignInButton() {
+export function SignInButton({ callbackURL = "/" }: { callbackURL?: string }) {
   return (
     <button
       onClick={() =>
-        authClient.signIn.social({ provider: "google", callbackURL: "/" })
+        authClient.signIn.social({ provider: "google", callbackURL })
       }
-      className="rounded-lg bg-black px-6 py-3 text-white hover:opacity-80"
+      className="rounded-lg bg-white px-6 py-3 text-black hover:opacity-80"
     >
       Đăng nhập với Google
     </button>
